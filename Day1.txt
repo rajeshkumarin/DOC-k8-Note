@@ -1,0 +1,180 @@
+What is Docker?
+======================
+	Container mgmt tool
+
+	tool
+	- Save cost
+			10 APP - 10 GB(PS) -- 10 APP - 7 GB (VS) -- 10 APP 4 GB(COnt)
+			CPU + RAM + DISK + OS
+			
+	- save time
+			4 Hours -- 5 mis -- 1 App - 1 Sec
+					    1000 App - 1 Sec
+	- improve quality
+			
+
+	mgmt 
+		create + start + stop + restart + pause + unp+ kil
+
+	Container
+		lightweight App runtime env
+		
+		collection of 
+				1 user
+				1 net
+				1 rooft
+				1 pidtree
+					
+
+What are the res needed to run 1 APP
+		
+HARDWARE
+	OS
+		kernal				
+			Namespace				OS	THEORY
+				NETWORK		1		1	N	
+				USER		1		N	N	
+				PID		1		1	N
+				MOUNT		1		1	N
+			Cgourps
+				CPU
+				RAM
+
+			Capability
+
+=====================================================
+Architecture of docker
+=========================================
+HUMAN --> Docker Client ---API--> Docker Deamon -> Containerd ---> Kernel
+					- Check image
+	========================================
+			docker engine
+
+Components of Docker
+=========================
+1. Install docker
+
+2. Download Image
+
+VM Image --> BOOTFILESYSTEM + ROOTFILESYSTEm + USERFS + APP P fs
+Docker Image ==  ROOTFILESYSTEm + USERFS + APP fs
+
+ubuntu + root + apache 
+
+3. registry
+		repos
+			versions of filesystem
+
+	hub.docker		
+			httpd
+				ubuntu + root + apache 
+
+4 Container
+
+YOU -> docker run httpd -> docker clinet ---> DockerD ---> ContainerD --> kernal
+					Check - Do i have image
+
+								1 user
+								1 net
+								1 pidtree
+								1 MOUNT==ROOTFS from image
+
+								Attach user to all res == container
+
+
+==============================================================================
+https://docs.google.com/forms/d/e/1FAIpQLSetZhS49CNrP5bkkgfDmyAoG7AfKAIh0O4TQPb1tSIV2hefkQ/viewform
+rajesh
+Rajesh$12345
+68.219.112.173
+========================================
+Step 1- Install Docker		DONE
+
+Step 2 - Download Image
+
+   8  clear
+    9  which docker
+   10  which dockerd
+   11  which containerd
+   12  ps -eaf | grep dockerd
+   13  ps -eaf | grep containerd
+   14  docker version
+   15  clear
+   16  docker version
+   17  docker info
+   18  docker images
+   19  docker ps
+   20  docker ps -a
+   21  history
+
+ docker pull httpd
+   24  docker images
+   25  clear
+   26  docker create httpd
+   27  docker ps -a
+   28  docker create --name raj1 httpd
+   29  docker ps -a
+   30  docker create --name raj3 httpd
+   31  docker ps -a
+   32  history
+  33  docker ps -a
+   34  docker images
+   35  docker pull httpd:alpine3.17
+   36  docker images
+   37  history
+   38  docker ps
+   39  docker ps -a
+   40  docker start fa3a6fa0527b
+   41  docker ps -a
+   42  docker start raj3
+   43  docker ps -a
+   44  docker stop raj3
+   45  docker ps -a
+   46  docker start raj3
+   47  docker ps -a
+   48  docker restart raj1
+   49  docker ps -a
+   50  docker kill raj3
+   51  docker ps -a
+   52  docker pause raj1
+   53  docker ps -a
+   54  docker unpause raj1
+   55  docker ps -a
+   56  docker stats
+   57  docker ps -a
+   58  docker rm fa3a6fa0527b
+   59  docker rm d77c4548f920 08548dce49b1
+   60  docker ps -a
+   61  clear
+
+Step 3 - Container Lifecycle
+
+Step 4 - Lab
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+			
+			
+
