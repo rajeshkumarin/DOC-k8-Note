@@ -84,6 +84,7 @@ YOU -> docker run httpd -> docker clinet ---> DockerD ---> ContainerD --> kernal
 
 ==============================================================================
 https://docs.google.com/forms/d/e/1FAIpQLSetZhS49CNrP5bkkgfDmyAoG7AfKAIh0O4TQPb1tSIV2hefkQ/viewform
+
 rajesh
 Rajesh$12345
 68.219.112.173
@@ -151,9 +152,131 @@ Step 3 - Container Lifecycle
 
 Step 4 - Lab
 
+===================================
+run
+-----------------------------
+pull + create + start + attach
+
+run -d
+-----------------------------
+pull + create + start + DO NOT attach
+
+
+attach - you become a container (pid1)
+
+How to use container?
+===============================
+
+1. How to get inside a cont
+
+exec
+
+BUT when you add -it and /bin/bash - u can get inside a container
+
+docker exec -it 9261eb0a1a0c /bin/bash
+
+
+2. How to access using network
+
+docker run -d -p 80:80 httpd
+docker run -d -p 81:80 httpd
+docker run -d -p 82:80 httpd
+
+
+//68.219.112.173:80
+68.219.112.173:81
+68.219.112.173:82
+
+  attach      Attach local standard input, output, and error streams to a running container
+  cp          Copy files/folders between a container and the local filesystem
+  create      Create a new container
+  diff        Inspect changes to files or directories on a container's filesystem
+  exec        Run a command in a running container
+  images      List images
+  info        Display system-wide information
+  inspect     Return low-level information on Docker objects
+  kill        Kill one or more running containers
+  pause       Pause all processes within one or more containers
+
+  port        List port mappings or a specific mapping for the container
+  ps          List containers
+  pull        Pull an image or a repository from a registry
+
+  rename      Rename a container
+  restart     Restart one or more containers
+  rm          Remove one or more containers
+  rmi         Remove one or more images
+  run         Run a command in a new container
+  search      Search the Docker Hub for images
+
+  start       Start one or more stopped containers
+  stats       Display a live stream of container(s) resource usage statistics
+  stop        Stop one or more running containers
+
+  top         Display the running processes of a container
+  unpause     Unpause all processes within one or more containers
+
+Docker
+---------------
+infra
+	cpu+ram+hdd+net = dcoker stats
+	container running - docker ps
+	logs - docker logs
+
+  events      Get real time events from the server
+  logs        Fetch the logs of a container
 
 
 
+
+ASSIGNMENT
+-----------
+  update      Update configuration of one or more containers
+  version     Show the Docker version information
+  wait        Block until one or more containers stop, then print their exit codes
+
+
+-==========================================================================
+
+  build       Build an image from a Dockerfile
+  commit      Create a new image from a container's changes
+  export      Export a container's filesystem as a tar archive
+  history     Show the history of an image
+  import      Import the contents from a tarball to create a filesystem image
+  load        Load an image from a tar archive or STDIN
+  login       Log in to a Docker registry
+  logout      Log out from a Docker registry
+  push        Push an image or a repository to a registry
+  save        Save one or more images to a tar archive (streamed to STDOUT by default)
+  tag         Create a tag TARGET_IMAGE that refers to SOURCE_IMAGE
+
+==============================================================================================
+
+How to create an image?
+----------------------------
+What is An image?
+
+	Image = rootfs + userfs + appsfs
+	=============================
+
+
+	FILESYSTEMS === LAYER
+
+=======================================================
+1 - lazy way	- using Existing container
+2 - Automated	- dockerfile
+
+UBU + GIT + Apache + JAVA === SoftX
+
+
+
+ 697  docker images
+  698  docker tag rrrrr devopsschools/softx333
+  699  docker images
+  700  docker login
+  701  docker push devopsschools/softx333
+
+docker commit -m"somthing" -a"rajesh" cont-name imagename
 
 
 
